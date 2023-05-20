@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    tags: '*'
+
+env:
+  APP_NAME: compose
+  KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+  RELEASE_SIGN_KEY_ALIAS: ${{ secrets.RELEASE_SIGN_KEY_ALIAS }}
+  RELEASE_SIGN_KEY_PASSWORD: ${{ secrets.RELEASE_SIGN_KEY_PASSWORD }}
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 17
+      - name: Checkout keystore repo
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ secrets.KEYSTORE_GIT_REPOSITORY }}
+          token: ${{ secrets.KEYSTORE_ACCESS_TOKEN }}
+          path: app/keystore
+      - name: Get git tag
+        uses: olegtarasov/get-tag@v2.1
+      - name: Check tag
+        if: ${{ env.GIT_TAG_NAME == '' }}
+        run: echo "GIT_TAG_NAME=latest" >> $GITHUB_ENV
+      - name: Build APK and AAB files
+        run: |
+          chmod +x ./scripts/build.sh
+          ./scripts/build.sh $APP_NAME-$GIT_TAG_NAME
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          path: build/*
+      - name: Create release
+        uses: 'marvinpinto/action-automatic-releases@latest'
+        with:
+          repo_token: '${{ secrets.GITHUB_TOKEN }}'
+          automatic_release_tag: '${{ env.GIT_TAG_NAME }}'
+          prerelease: false
+          files: build/*
