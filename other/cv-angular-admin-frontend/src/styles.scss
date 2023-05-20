@@ -1,0 +1,67 @@
+@import 'styles/lib';
+@import 'styles/theme';
+
+* {
+  margin: 0;
+  transition: 0.3s ease-out;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+}
+
+.divider {
+  margin: size(1) 0;
+  width: 100%;
+  height: 1px;
+  background-color: $divider;
+}
+
+.list-view {
+  padding: size(2);
+  width: 100%;
+  @include flex(column, flex-start, center);
+  gap: size(1);
+
+  .card {
+    width: 100%;
+  }
+}
+
+.page {
+  height: 100vh;
+  @include flex(column, flex-start, center);
+}
+
+.form {
+  margin: size(1);
+  padding: size(2);
+  @include flex(column, flex-start, center);
+  border: 1px solid $divider;
+}
+
+.row {
+  @include flex(row, center, center);
+  gap: size(1);
+  flex-wrap: wrap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');

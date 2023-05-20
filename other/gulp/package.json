@@ -1,0 +1,50 @@
+{
+  "name": "iipekolict.github.io",
+  "version": "5.0.0",
+  "description": "my website",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "browser-sync": "^2.27.4",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cleancss": "^0.2.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-inject": "^5.0.5",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.1",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify-es": "^2.0.0",
+    "imagemin-jpeg-recompress": "^7.0.0",
+    "nib": "^1.1.2",
+    "require-dir": "^1.2.0"
+  },
+  "scripts": {
+    "start": "gulp",
+    "load": "gulp load"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IIPEKOLICT/iipekolict.github.io.git"
+  },
+  "keywords": [
+    "web",
+    "pug",
+    "stylus",
+    "js"
+  ],
+  "author": "iipekolict <iipekolict@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IIPEKOLICT/iipekolict.github.io/issues"
+  },
+  "homepage": "https://github.com/IIPEKOLICT/iipekolict.github.io#readme"
+}

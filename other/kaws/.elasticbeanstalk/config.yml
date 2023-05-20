@@ -1,0 +1,9 @@
+branch-defaults:
+  main:
+    environment: Kaws-env
+deploy:
+  artifact: build/libs/backend.jar
+global:
+  application_name: kaws
+  default_platform: Corretto 17 running on 64bit Amazon Linux 2
+  default_region: us-east-1

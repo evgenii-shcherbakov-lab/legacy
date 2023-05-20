@@ -1,0 +1,12 @@
+<mat-toolbar color='primary' class='header'>
+  <h1>{{ appName }}</h1>
+  <span class='divider'></span>
+  <mat-slide-toggle
+    labelPosition='before'
+    color='accent'
+    [checked]='isDark'
+    (change)='darkModeHandler($event.checked)'
+  >
+    {{ switchLabel }}
+  </mat-slide-toggle>
+</mat-toolbar>

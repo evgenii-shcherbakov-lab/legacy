@@ -1,0 +1,117 @@
+// MODULE: Диалоговые окна
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+// BLOCK: Стоковые стили диалоговой зоны
+
+.dialog
+    bottom 0
+    dimen(100%, 0)
+    position fixed
+    fs(1)
+    z-index 20
+
+    &__container
+        height 0
+        max-height 90vh
+        background-color --v.secBg
+        border-radius $br
+        opacity 0
+        transform translateY(0)
+        transition $trans
+
+    &__btn
+        height 0
+        text-align center
+
+    &__block
+        padding b(4)
+        display none
+        overflow hidden
+        overflow-y auto
+        -webkit-overflow-scrolling touch
+
+        @media --q.lg-
+            min-width b(100)
+
+        &.shown
+            dimen(100%, auto)
+            flexi(column)
+            box-sizing border-box
+            
+            @media --q.-md
+                align-items center
+
+        &__header
+            margin-bottom b(2)
+            dimen(100%, auto)
+            text-align center
+            font-weight bold
+            fs(1.5)
+
+    // BLOCK: Диалоговая зона при показе
+
+    &.shown
+        height 100%
+        flexi(row, center, center)
+        background-color rgba(0, 0, 0, .5)
+
+        @media --q.-md
+            align-items flex-end
+
+        & .dialog__container
+            height auto
+            flexi(column-reverse)
+            opacity 1
+
+            @media --q.lg-
+                max-width b(100)
+
+            @media --q.-md
+                width 100%
+                border-radius $br $br 0 0
+                transform translateY(0)
+
+        & .dialog__btn
+            @media --q.lg-
+                display none
+
+            @media --q.-md
+                margin b(4)
+                padding b(4)
+                dimen(calc(100% - 40px), auto)
+                background-color --v.oAccent
+                color --v.mainBg
+                box-sizing border-box
+
+            &:hover
+                background-color --v.accent
+
+            &:before
+                content: "Отмена"
+
+        & .nav
+            dimen(100%, auto)
+            flexi(column, center, center)
+            fs(1.2)
+
+            @media --q.-sm
+                fs(1)
+
+                &__item
+                    height b(6)
+
+            &__item
+                margin ($br / 8)
+                padding ($br / 2) $br
+                dimen(90%, b(4))
+                flexi(row, flex-start, center)
+                border-radius $br
+                transition $trans
+
+                &:hover
+                    background-color --v.hover
+                    color --v.accent

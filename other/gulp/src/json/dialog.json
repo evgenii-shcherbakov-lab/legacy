@@ -1,0 +1,501 @@
+{
+    "index": [],
+    "settings": [
+        {
+            "id": "accent-color",
+            "blocks": [
+                {
+                    "title": "Цвет акцента",
+                    "container": true,
+                    "containerClass": "six-item__container",
+                    "items": [
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(66,165,246)",
+                            "id": "ac0",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(66,165,246)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(66,165,246,.5)"
+                                }
+                            ]  
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(150,117,206)",
+                            "id": "ac1",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(150,117,206)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(150,117,206,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(235,0,40)",
+                            "id": "ac2",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(235,0,40)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(235,0,40,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(204,111,78)",
+                            "id": "ac3",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(204,111,78)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(204,111,78,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(37,198,218)",
+                            "id": "ac4",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(37,198,218)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(37,198,218,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(68,97,214)",
+                            "id": "ac5",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(68,97,214)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(68,97,214,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(229,165,68)",
+                            "id": "ac6",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(229,165,68)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(229,165,68,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(240,98,146)",
+                            "id": "ac7",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(240,98,146)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(240,98,146,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(32,133,89)",
+                            "id": "ac8",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(32,133,89)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(32,133,89,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(125,195,47)",
+                            "id": "ac9",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(125,195,47)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(125,195,47,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "rgb(185,104,199)",
+                            "id": "ac10",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(185,104,199)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(185,104,199,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "black",
+                            "id": "ac11",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(0,0,0)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(0,0,0,.5)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "white",
+                            "id": "ac12",
+                            "name": "accent-color",
+                            "value": [
+                                {
+                                    "var": "--accent_color",
+                                    "value": "rgb(255,255,255)"
+                                },
+                                {
+                                    "var": "--accent_opacity-color",
+                                    "value": "rgba(255,255,255,.5)"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "theme",
+            "blocks": [
+                {
+                    "title": "Темная тема",
+                    "container": false,
+                    "items": [
+                        {
+                            "type": "switchLabel",
+                            "header": "Включить",
+                            "id": "dark-mode1",
+                            "name": "dark-mode"
+                        }
+                    ]
+                },
+                {
+                    "title": "Базовый цвет темы",
+                    "container": true,
+                    "containerClass": "six-item__container",
+                    "items": [
+                        {
+                            "type": "colorableRadio",
+                            "color": "black",
+                            "id": "tc0",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 0
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(33,50%,50%)",
+                            "id": "tc1",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 33
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(65,50%,50%)",
+                            "id": "tc2",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 65
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(98,50%,50%)",
+                            "id": "tc3",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 98
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(131,50%,50%)",
+                            "id": "tc4",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 131
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(164,50%,50%)",
+                            "id": "tc5",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 164
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(196,50%,50%)",
+                            "id": "tc6",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 196
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(229,50%,50%)",
+                            "id": "tc7",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 229
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(262,50%,50%)",
+                            "id": "tc8",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 262
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(295,50%,50%)",
+                            "id": "tc9",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 295
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(327,50%,50%)",
+                            "id": "tc10",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 327
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "colorableRadio",
+                            "color": "hsl(360,50%,50%)",
+                            "id": "tc11",
+                            "name": "theme-color",
+                            "value": [
+                                {
+                                    "var": "H",
+                                    "value": 360
+                                },
+                                {
+                                    "var": "S",
+                                    "value": 50
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "font-family",
+            "blocks": [
+                {
+                    "title": "Шрифт",
+                    "container": false,
+                    "items": [
+                        {
+                            "type": "rowRadio",
+                            "id": "f0",
+                            "name": "font-family",
+                            "value": [{"var": "--font_family", "value": "Open Sans"}],
+                            "text": "Open Sans"
+                        },
+                        {
+                            "type": "rowRadio",
+                            "id": "f1",
+                            "name": "font-family",
+                            "value": [{"var": "--font_family", "value": "Arial"}],
+                            "text": "Arial"
+                        },
+                        {
+                            "type": "rowRadio",
+                            "id": "f2",
+                            "name": "font-family",
+                            "value": [{"var": "--font_family", "value": "Arial black"}],
+                            "text": "Arial black"
+                        },
+                        {
+                            "type": "rowRadio",
+                            "id": "f3",
+                            "name": "font-family",
+                            "value": [{"var": "--font_family", "value": "Comic sans"}],
+                            "text": "Comic sans"
+                        },
+                        {
+                            "type": "rowRadio",
+                            "id": "f4",
+                            "name": "font-family",
+                            "value": [{"var": "--font_family", "value": "Impact"}],
+                            "text": "Impact"
+                        },
+                        {
+                            "type": "rowRadio",
+                            "id": "f5",
+                            "name": "font-family",
+                            "value": [{"var": "--font_family", "value": "Tahoma"}],
+                            "text": "Tahoma"
+                        },
+                        {
+                            "type": "rowRadio",
+                            "id": "f6",
+                            "name": "font-family",
+                            "value": [{"var": "--font_family", "value": "Verdana"}],
+                            "text": "Verdana"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

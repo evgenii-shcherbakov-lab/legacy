@@ -1,0 +1,150 @@
+// MODULE: Шапка
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+// BLOCK: Стоковые стили шапки
+
+$header_h = b(15)
+
+.header
+    dimen(100%, $header_h)
+    flexi(column, center)
+    position fixed
+    background-color --v.mainBg
+    box-sizing border-box
+    fs(1.5)
+    transition $trans
+    z-index 20
+    
+    // FIXME: Потом убрать, если не буду делать стилистику ван юай
+    &:not(.oneui-style)
+        border-bottom 0.5px solid --v.divider
+        box-shadow 0 0.5px 3px 0 --v.divider
+
+    @media --q.lg-
+        dimen(100%, 30vh)
+        flexi(column, flex-end, center)
+
+        & #nav-icon
+            display none
+
+    &__top
+        top 0
+        flexi(row, space-between, center)
+        position absolute
+        transition .15s linear
+
+        &__scroll-indicator
+            dimen(inherit, inherit)
+            position absolute
+
+            .dark &
+                background-color rgba(255,255,255,.1)
+            
+            .light &
+                background-color rgba(0,0,0,.1)
+
+    &__bottom
+        dimen(100%, inherit)
+        flexi(row, flex-end, center)
+        z-index 21
+
+    & .nav
+        dimen(auto, inherit)
+        flexi(row, flex-start, center)
+
+        @media --q.-md
+            display none
+
+        &__item
+            margin b(1)
+            padding b(4)
+            flexi(row, center, center)
+            border-radius ($br / 2)
+            fs(1)
+            transition $trans
+
+            &:hover
+                background-color --v.hover
+                color --v.accent
+
+    @media --q.-md
+        &__top
+            dimen(calc(100% - 60px), $header_h)
+
+            &__scroll-indicator
+                width calc(100% + 60px)
+
+    @media --q.lg-
+        &:not(.scroll) 
+            .header__top
+                dimen(100%, 10vh)
+                fs(5)
+
+                &__left
+                    margin-top b(4)
+
+                &__right
+                    fs(1.5)
+
+                &__scroll-indicator
+                    height calc(100% + 40vh)
+
+            .header__bottom
+                dimen(100%, 10vh)
+                flexi(row, flex-end, center)
+
+        &.scroll
+            dimen(100%, $header_h)
+
+            .header__top
+                dimen(100%, $header_h)
+                fs(1.5)
+
+                &__right
+                    opacity 0
+
+    &__title
+        padding-left b(4)
+
+        @media --q.-md
+            dimen(inherit, $header_h)
+
+        &:not(.header__time)
+            text-transform capitalize
+
+    &__time
+        flexi(row, flex-start, center)
+
+    &__icon
+        margin 0 b(2)
+        padding b(2) - 2px
+        dimen($header_h / 2, $header_h / 2)
+        flexi(row)
+        position relative
+        border 2px solid transparent
+        border-radius 50%
+        cursor pointer
+        transition $trans
+
+        &:hover
+            border-color --v.accent
+            transform scale(.8)
+
+        &--invisible
+            margin b(2.5) b(4.5)
+            padding 0
+            dimen($header_h / 2, 0)
+            border 0
+            
+            .header__icon__svg
+                display none
+
+        &__svg
+            dimen(inherit, inherit)
+
+        &.link--hidden
+            z-index 21

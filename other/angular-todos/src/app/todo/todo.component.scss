@@ -1,0 +1,23 @@
+@import '../../styles/lib';
+
+.todo {
+  margin: size(1) 0;
+  padding: size(1);
+  @include flex(row, flex-start, center);
+  background-color: $secondary;
+  border-radius: size(1);
+  border: 2px solid $secondary;
+
+  &.strong {
+    background-color: $oAccent;
+    border-color: $accent;
+  }
+
+  &__checkbox {
+    margin-right: size(1);
+
+    &.mat-checkbox-checked + span {
+      text-decoration: line-through;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+    "input": "src/",
+    "output": "docs/",
+    "load": "src/",
+    "dir": {
+        "root": "",
+        "pug": "pug/",
+        "css": "css/",
+        "cssLib": "css-lib/",
+        "scss": "scss/",
+        "sass": "sass/",
+        "styl": "styl/",
+        "js": "js/",
+        "jsLib": "js-lib/",
+        "json": "json/",
+        "img": "img/",
+        "font": "font/",
+        "svg": "svg/"
+    },
+    "file": {
+        "all": "**/*",
+        "html": "**/*.html",
+        "pug": "**/*.pug",
+        "css": "**/*.css",
+        "scss": "**/*.scss",
+        "sass": "**/*.sass",
+        "styl": "**/*.styl",
+        "js": "**/*.js",
+        "json": "**/*.json",
+        "module": "**/_*"
+    },
+    "autoprefixer": {
+        "config": ["last 15 versions", "> 1%", "ie 8", "ie 7"],
+        "options": {"cascade": "true"}
+    },
+    "imgCompress": {
+        "loops": 4,
+        "min": 70,
+        "max": 80,
+        "quality": "high"
+    },
+    "inject": {
+        "starttag": "<!-- {{ext}} -->",
+        "endtag": "<!-- !{{ext}} -->",
+        "relative": true
+    }
+}

@@ -1,0 +1,52 @@
+// MODULE: лейблы инпутов
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+// BLOCK: Базовые стили лейблов
+
+.label
+    &__row
+        flexi(row, flex-start, center)
+        align-self flex-start
+        cursor pointer
+
+        *:not(.six-item__container) &
+            dimen(100%, auto)
+
+        .six-item__container &
+            width auto
+
+        & input
+            display none
+
+        &__name
+            padding b(2) 0
+            flex 1
+
+    // BLOCK: стили строчного лейбла тумблера
+
+    &__switch
+        justify-content space-between
+        background-color: transparent
+
+        & input
+            display none
+
+        .menu-item__text
+            margin 0 b(2)
+            width calc(100% - 100px)
+
+        // BLOCK: стили строчного лейбла тумблера в диалоговой зоне
+
+        .dialog &
+            margin-bottom b(2)
+            border-radius $br
+
+            @media --q.lg-
+                flexi(row, space-between, center)
+
+            & .menu-item__text
+                width auto

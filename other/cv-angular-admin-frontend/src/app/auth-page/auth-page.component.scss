@@ -1,0 +1,11 @@
+@import '../../styles/lib';
+
+.auth-page {
+  justify-content: center;
+
+  &__form {
+    width: 150px;
+    @include flex(column, flex-start, center);
+    gap: size(1);
+  }
+}

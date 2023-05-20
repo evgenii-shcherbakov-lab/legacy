@@ -1,0 +1,93 @@
+mixin link(obj)
+    a(href= obj.href, class= obj.class)= obj.text
+
+mixin menuTile(obj)
+    .menu-tile
+        +link(obj.link)
+        .menu-tile__info
+            .menu-tile__info__header= obj.title
+            img.menu-tile__info__img(src= obj.img.src, alt= obj.img.alt)
+        details.menu-tile__spoiler  
+            summary.menu-tile__spoiler__btn.btn 
+            span= obj.spoiler
+
+mixin menuItemIcon(id)
+    svg.menu-item__icon__svg(width='100' height='100' viewBox='0 0 100 100')
+        case id
+            when 'about'
+                include ../settings-icons/about-icon
+            when 'accent'
+                include ../settings-icons/accent-icon
+            when 'color'
+                include ../settings-icons/color-icon
+            when 'font'
+                include ../settings-icons/font-icon
+            default 
+                span= ''
+
+mixin menuItemContent(obj)
+    if (obj.iconId != null)
+        .menu-item__icon
+            +menuItemIcon(obj.iconId)
+    .menu-item__text 
+        .menu-item__header= obj.header
+        if (obj.secondary != null)
+            .menu-item__secondary= obj.secondary
+
+mixin menuItem(obj)
+    .menu-item(onclick= obj.onclick)
+        if (obj.link != null)
+            +link(obj.link)
+        +menuItemContent(obj)
+
+mixin switchContainer(obj)
+    .menu-item.switch-container
+        .switch-container__left(onclick= obj.onclick)
+            if (obj.link != null)
+                +link(obj.link)
+            +menuItemContent(obj)
+        label.switch-container__right
+            input(type='checkbox' name= obj.input.name id= obj.input.id)
+            span.switch
+
+mixin input(obj)
+    - const value = JSON.stringify(obj.value)
+    input(type= obj.type, id= obj.id, name= obj.name, value= JSON.stringify(obj.value))
+
+mixin label(obj)
+    label(class= obj.class)
+        +input(obj.input)
+        span(class= obj.spanClass)
+        if (obj.twoSpans)
+            span(class= obj.secondSpanClass)
+
+mixin colorableRadio(obj)
+    label.label__row.label__colored(style= `--accent_color: ${obj.color}`)
+        input(type='radio', id= obj.id, name= obj.name, value= JSON.parse(JSON.stringify(obj.value)))
+        span.radio__colorable
+
+mixin rowRadio(obj)
+    label.label__row
+        input(type='radio', id= obj.id, name= obj.name, value= obj.value)
+        span.radio__btn
+        span.radio__name= obj.text
+
+mixin switchLabel(obj)
+    label.menu-item.label__switch
+        +menuItemContent(obj)
+        input(type='checkbox' name= obj.name id= obj.id)
+        span.switch
+
+mixin dialogBlockContent(array)
+    each item in array
+        case item.type
+            when 'colorableRadio'
+                +colorableRadio(item)
+            when 'rowRadio'
+                +rowRadio(item)
+            when 'switchLabel'
+                +switchLabel(item)
+            default
+                +label(item)
+    else 
+        span= 'empty'

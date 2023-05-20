@@ -1,0 +1,34 @@
+{
+    "index": {
+        "pageTitle": "Стартовая",
+        "shortcutPath": "svg/home-shortcut-icon.svg",
+        "stylePathes": [
+            "css/lib.min.css",
+            "css/core.min.css"
+        ],
+        "scriptPathes": [
+            "js/lib.min.js",
+            "js/theme-base.min.js",
+            "js/dialog.min.js",
+            "js/time.min.js"
+        ],
+        "themePreloader": false
+    },
+    "settings": {
+        "pageTitle": "Настройки",
+        "shortcutPath": "svg/settings-shortcut-icon.svg",
+        "stylePathes": [
+            "css/lib.min.css",
+            "css/core.min.css",
+            "css/input.min.css",
+            "css/addon.min.css"
+        ],
+        "scriptPathes": [
+            "js/lib.min.js",
+            "js/theme-base.min.js",
+            "js/theme-settings.min.js",
+            "js/dialog.min.js"
+        ],
+        "themePreloader": true
+    }
+}

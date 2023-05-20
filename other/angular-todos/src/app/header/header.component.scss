@@ -1,0 +1,23 @@
+@import '../../styles/lib';
+
+.header {
+  padding: size(1);
+  background-color: $secondary;
+
+  @media (max-width: 400px) {
+    font-size: size(1);
+  }
+
+  h1 {
+    font-size: size(2);
+    font-weight: 400;
+
+    &:first-letter {
+      color: $accent;
+    }
+  }
+
+  a:hover {
+    color: $oAccent;
+  }
+}

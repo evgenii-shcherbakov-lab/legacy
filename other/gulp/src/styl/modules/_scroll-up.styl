@@ -1,0 +1,62 @@
+// MODULE: Якорь
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+// BLOCK: Базовые стили
+
+$scrollUp_base = b(12)
+$scrollUp_primary = --v.secBg
+$scrollUp_secondary = --v.mainColor
+
+.scroll-up // Контейнер для якоря, также ссылка на верхний элемент страницы
+    right ($scrollUp_base / 2)
+    bottom ($scrollUp_base / 2)
+    dimen($scrollUp_base, $scrollUp_base)
+    flexi(row, center, center)
+    position fixed
+    background-color $scrollUp_primary
+    color $scrollUp_secondary
+    border-radius 50%
+    box-shadow 0 0 b(1) 2px --v.secColor
+    opacity 0
+    visibility hidden
+    transform translateY($scrollUp_base / 3)
+    transition $trans
+    z-index 50
+
+    &__svg // Виев-порт свг-картинки якоря
+        width inherit
+        height inherit
+        z-index 51
+
+        &__path // Обводка свг
+            fill none
+            stroke --v.accent
+            stroke-width ($scrollUp_base / 10)
+
+        &__g // Группа, изображающая стрелочку
+            stroke $scrollUp_secondary
+
+        &__line // Линия в стрелочке
+            fill none
+            stroke-width ($scrollUp_base / 10)
+
+        &__polygon // Треугольник в стрелочке
+            fill $scrollUp_secondary
+
+    &.shown // Якорь, когда активен
+        opacity .5
+        visibility visible
+        transform translateY(0)
+
+        &:hover // Якорь активен и на него наведена мышь
+            opacity 1
+
+            .scroll-up__svg__g // Стрелочка окрашивается в акцент
+                stroke --v.accent
+
+            .scroll-up__svg__polygon
+                fill: --v.accent

@@ -1,0 +1,11 @@
+@use 'lib' as lib;
+
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+  background-color: rgba(100,100,100,.5);
+
+  &-thumb {
+    background-color: lib.$main;
+  }
+}

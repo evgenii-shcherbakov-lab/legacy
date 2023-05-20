@@ -1,0 +1,61 @@
+// MODULE: Миксины и функции
+
+// BLOCK: миксины
+
+b(value)
+    $base * value
+
+fs(value)
+    font-size $fs * value
+
+dimen(w, h = auto)
+    width w
+    height h
+
+flexi(d, j = flex-start, a = flex-start)
+    display flex
+    flex-direction d
+    justify-content j
+    align-items a
+
+// BLOCK: Порты CSS-переменных
+
+vars = {
+    accent:     var(--accent_color, rgb(235,0,40))                    rgb(235,0,40)
+    oAccent:    var(--accent_opacity-color, rgba(235,0,40,.5))        rgba(235,0,40,.5)
+
+    mainBg:     var(--main_bg-color, hsl(0,0%,0%))                    hsl(0,0%,0%)
+    mainColor:  var(--main_text-color, hsl(0,0%,85%))                 hsl(0,0%,85%)
+    
+    secBg:      var(--secondary_bg-color, hsl(0,0%,8%))               hsl(0,0%,8%)
+    secColor:   var(--secondary_text-color, hsl(0,0%,55%))            hsl(0,0%,55%)
+
+    divider:    var(--divider_color, hsl(0,0%,12%))                   hsl(0,0%,12%)
+    hover:      var(--hover_bg-color, hsl(0,0%,10%))                  hsl(0,0%,10%)
+    
+    fontF:      var(--font_family, 'Open Sans')                         'Open Sans'
+}
+--v = {}
+
+for name, par in vars
+    --v[name] = par[0]
+    --v[name + '_r'] = par[1]
+
+// BLOCK: Медиа-выражения
+
+sizes = {
+    gs: 0       360
+    xs: 361     540
+    sm: 541     768
+    md: 769     1024
+    lg: 1025    1440
+    xl: 1440    99999999
+}
+--q = {}
+
+for name, pxs in sizes
+    min = '(min-width:' + pxs[0] + 'px)'
+    max = '(max-width:' + pxs[1] + 'px)'
+    --q[name] = min + ' and ' + max
+    --q['-' + name] = 'screen and ' + max
+    --q[name + '-'] = 'screen and ' + min

@@ -1,0 +1,19 @@
+<app-header></app-header>
+<main>
+  <app-form
+    (onAdd)='addTodo($event)'
+  ></app-form>
+  <div class='container' *ngIf='length; else noTodos'>
+    <app-todo
+      *ngFor='let todo of todos; let idx = index'
+      [todo]='todo'
+      [index]='idx'
+      (onChange)='changeTodo($event, idx)'
+      (onDelete)='deleteTodo($event)'
+    ></app-todo>
+  </div>
+
+  <ng-template #noTodos>
+    <p class='center'>No todos</p>
+  </ng-template>
+</main>

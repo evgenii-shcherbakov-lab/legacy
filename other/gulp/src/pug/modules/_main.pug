@@ -1,0 +1,21 @@
+include _mixins
+
+main.main 
+    each section in content 
+        section.section(id= section.id)
+            h2.section__header= section.header 
+            div(class= (section.contentWrap) ? 'section__content section__content--wrap' : 'section__content')
+                each item in section.items
+                    case item.type 
+                        when 'menu-item'
+                            +menuItem(item)
+                        when 'menu-tile'
+                            +menuTile(item)
+                        when 'switch-container'
+                            +switchContainer(item)
+                        default 
+                            span= 'unsupported type'
+                else 
+                    span= 'empty'
+    else
+        span= 'empty'

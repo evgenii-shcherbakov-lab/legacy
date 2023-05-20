@@ -1,0 +1,200 @@
+// MODULE: Меню
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+// BLOCK: Материнский контейнер
+
+$menu-item_h = b(15)
+$menu-tile_h = b(75)
+
+.menu
+    flexi(row, center, center)
+    
+    @media --q.md-
+        flex-wrap wrap
+
+    @media --q.-sm
+        flexi(column)
+
+    // BLOCK: Меню секционное
+
+    &-item
+        dimen(100%, $menu-item_h)
+        flexi(row, flex-start, center)
+        position relative
+        box-sizing border-box
+        cursor pointer
+        transition $trans
+
+        @media --q.lg-
+            //
+
+        @media --q.-sm
+            padding b(2)
+
+        &:hover
+            background-color --v.hover
+
+        &__icon
+            margin 0 ($menu-item_h / 4)
+            dimen($menu-item_h / 2, $menu-item_h / 2)
+            flexi(row, center, center)
+            background-color --v.secBg
+            color --v.accent
+            border-radius 50%
+
+            @media --q.-xs
+                display none
+
+                & + .menu-item__text
+                    padding-left b(2)
+
+            &__svg
+                dimen($menu-item_h / 4, $menu-item_h / 4)
+
+        &__text
+            flexi(column, center, flex-start)
+
+            &:first-child
+                padding-left b(2)
+        
+        &__header
+            padding 1px 0
+
+        &__secondary
+            padding 4px 0
+            color --v.secColor
+            fs(0.8)
+
+    // BLOCK: Меню плиточное
+
+    &-tile
+        margin b(2)
+        flexi(column, flex-start, center)
+        position relative
+        box-sizing border-box
+        border-radius $br
+        border 2px solid transparent
+        overflow hidden
+        transition $trans
+
+        &:hover
+            background-color: --v.hover
+            border-color --v.accent
+
+        @media --q.lg-
+            dimen(calc(50% - 20px), $menu-tile_h)
+            background-color --v.secBg
+
+        @media --q.-md
+            dimen(calc(100% - 20px), auto)
+            border-color --v.secBg
+
+        .light &
+            background-color: --v.secBg
+
+            &:hover
+                background-color: --v.hover
+
+        &__info
+            padding b(4)
+            flexi(column, flex-start, center)
+            box-sizing border-box
+            overflow hidden
+            z-index 10
+
+            @media --q.lg-
+                //dimen(inherit, b(40))
+
+            @media --q.-sm
+                padding b(2)
+                dimen(inherit, auto)
+
+            &__header
+                padding-bottom b(2)
+                dimen(100%, b(12))
+                flexi(row, center, center)
+                flex-wrap wrap
+                text-align center
+                fs(2)
+
+                @media --q.-sm
+                    dimen(100%, b(6))
+                    fs(1.5)
+
+                @media (max-width 400px)
+                    fs(1)
+
+            &__img
+                margin b(2) 0
+                border-radius $br
+                object-fit cover
+
+                @media --q.lg-
+                    dimen(100%, $menu-tile_h - b(35))
+
+                @media --q.-md
+                    dimen(100%, auto)
+
+                @media --q.-gs
+                    display none
+
+        &__spoiler
+            margin 0 b(4)
+            padding b(4) 0
+            flexi(column)
+            transition $trans
+            z-index 11
+            
+            &[open]
+                border-top: 1px solid --v.divider
+
+                .oneui-style &
+                    border-top: 1px solid --v.secColor
+
+            &[open] *
+                animation spoiler 1s
+
+                @keyframes spoiler {
+                    0%   {opacity: 0;}
+                    100% {opacity: 1;}
+                }
+
+            &[open] &__btn::before
+                content: 'Свернуть'
+
+            @media --q.lg-
+                bottom 0
+                dimen(100%, b(4))
+                position absolute
+                background-color: --v.secBg
+
+                &[open]
+                    dimen(calc(100% - 40px), calc(100% - 140px))
+
+                    .menu-tile:hover &
+                        background-color --v.hover
+
+            @media --q.-md
+                padding-bottom b(12)
+                dimen(inherit, auto)
+                position relative
+            
+            &__btn
+                left 20%
+                bottom b(2)
+                margin 0 auto
+                dimen(60%, b(8))
+                position absolute
+
+                &::before
+                    content: 'Подробнее'
+
+        .menu-item__text
+            flexi(column, center, center)
+
+        & .link--hidden
+            z-index 11

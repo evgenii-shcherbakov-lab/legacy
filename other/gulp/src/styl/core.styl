@@ -1,0 +1,76 @@
+// MODULE: Ядро (минимальный необходимый набор функций)
+
+@import 'nib'
+
+@require 'modules/_vars.styl'
+@require 'modules/_mixins.styl'
+
+// BLOCK: Базовые стили
+
+body
+    color --v.mainColor
+    background-color --v.mainBg
+    font-family --v.fontF, sans-serif
+    fs(1)
+
+.link
+    text-decoration none
+    color inherit
+
+    &--hidden
+        dimen(100%, 100%)
+        position absolute
+
+.text
+    &--accent
+        color --v.accent
+    &--red
+        color #eb0028
+
+// BLOCK: Базовые стили кнопки
+
+.btn
+    flexi(row, center, center)
+    background-color --v.oAccent
+    color --v.mainBg
+    border-radius ($br / 2)
+    cursor pointer
+    transition $trans
+
+    &:hover
+        background-color --v.accent
+
+// BLOCK: Скроллбар
+
+    // полоса прокрутки (скроллбар)
+
+::-webkit-scrollbar
+    dimen(b(2), b(2))
+    background-color: --v.secBg
+
+.dialog__block::-webkit-scrollbar
+    background-color: transparent
+
+    // ползунок скроллбара
+
+::-webkit-scrollbar-thumb
+    background-color: --v.secColor
+    border-radius ($br / 2)
+    box-shadow inset 1px 1px b(2) --v.mainColor
+
+::-webkit-scrollbar-thumb:hover
+    border-radius ($br / 2)
+    background-color: --v.accent;
+    opacity .8
+
+// BLOCK: Импорты модулей-разделов
+
+@import 'modules/_root.styl'
+@import 'modules/_font.styl'
+@import 'modules/_preloader.styl'
+@import 'modules/_header.styl'
+@import 'modules/_main.styl'
+@import 'modules/_section.styl'
+@import 'modules/_menu.styl'
+@import 'modules/_dialog.styl'
+@import 'modules/_scroll-up.styl'

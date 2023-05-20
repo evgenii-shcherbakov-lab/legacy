@@ -1,0 +1,98 @@
+// MODULE: Радио-кнопки
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+// BLOCK: переменные
+
+$radio_base = b(2.5)
+$radioCol_base = b(12)
+
+.radio
+    // BLOCK: стили сток радиокнопки
+
+    &__name
+        justify-content flex-start
+
+    &__btn
+        margin $radio_base
+        dimen($radio_base, $radio_base)
+        border ($radio_base / 2) solid --v.mainBg
+        border-radius $radio_base
+        box-shadow 0 0 0 ($radio_base / 6) $radioNA
+        transition $trans
+
+        // цвет неактивной радиокнопки при темной теме
+
+        .dark &
+            box-shadow 0 0 0 ($radio_base / 6) #c7c7c7
+
+        // цвет неактивной радиокнопки при светлой теме
+
+        .light &
+            box-shadow 0 0 0 ($radio_base / 6) #757575
+
+        // цвет между кружками радиокнопки в диалоговой зоне
+
+        .dialog__container &
+            border-color --v.secBg
+
+        .label__colored &
+            box-shadow 0 0 0 ($radio_base / 6) --v.accent
+
+        [type="radio"]:checked + &
+            background-color --v.accent
+            box-shadow 0 0 0 ($radio_base / 6) --v.accent
+
+    // BLOCK: стили цветастой радиокнопки
+
+    [type="radio"] + &__colorable::before
+        content '✓'
+        margin ($radioCol_base * 0.1)
+        dimen($radioCol_base, $radioCol_base)
+        flexi(row, center, center)
+        background-color --v.accent
+        border-radius 50%
+        color --v.accent
+        fs(2)
+        transition $trans
+
+        .six-item__container &
+            @media --q.-md
+                margin ($radioCol_base * 0.3)
+                dimen($radioCol_base * 0.8, $radioCol_base * 0.8)
+                fs(1.5)
+
+            @media --q.-xs
+                margin ($radioCol_base * 0.15)
+                dimen($radioCol_base * 0.7, $radioCol_base * 0.7)
+
+            @media --q.-gs
+                margin ($radioCol_base * 0.1)
+                dimen($radioCol_base * 0.45, $radioCol_base * 0.45)
+                fs(1)
+
+    [type="radio"]:checked + &__colorable::before
+        color --v.mainBg
+
+// BLOCK: Контейнер с переносом (для цветастых радиокнопок)
+
+.six-item__container
+    flexi(row, center, center)
+    flex-wrap wrap
+
+    #accent-color &
+    #theme &
+        @media --q.-md
+            width b(108)
+
+            .label__row
+                width auto
+
+        @media --q.-xs
+            width b(72)
+
+        @media --q.-gs
+            width b(48)

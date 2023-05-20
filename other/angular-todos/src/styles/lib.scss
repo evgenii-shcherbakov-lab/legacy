@@ -1,0 +1,29 @@
+@use '@angular/material' as mat;
+@use 'theme' as theme;
+
+$accent: mat.get-color-from-palette(theme.$accentPalette);
+$oAccent: mat.get-color-from-palette(theme.$accentPalette, .3);
+$main: black;
+$primary: white;
+$secondary: mat.get-color-from-palette(theme.$secondaryPalette, 600);
+$divider: mat.get-color-from-palette(theme.$secondaryPalette);
+
+$base: 1em;
+$tr: .3s ease-out;
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin scroll-view($height) {
+  width: 100%;
+  height: $height;
+  overflow-y: auto;
+}
+
+@function size($value) {
+  @return $base * $value
+}

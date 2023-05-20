@@ -1,0 +1,62 @@
+// MODULE: Раздел SECTION
+
+@import 'nib'
+
+@require '_vars.styl'
+@require '_mixins.styl'
+
+// BLOCK: Стоковые стили секций
+
+$main_p = b(4)
+
+.section
+    flexi(column)
+    overflow hidden
+
+    &:not(.oneui-style):not(:last-of-type)
+        border-bottom 1px solid --v.divider
+
+    &__header
+        margin $main_p
+        dimen(100%, auto)
+        flex-basis 100%
+        color --v.accent
+        text-align: center
+        text-transform: uppercase
+        box-sizing border-box
+        fs(1.5)
+
+        @media --q.-md
+            text-align: left
+
+        @media --q.-xs
+            width 90%
+            white-space nowrap
+            overflow hidden
+            text-overflow ellipsis
+            fs(1)
+
+        &.oneui-style
+            color --v.secColor
+            fs(0.8)
+
+    &__content
+        //margin-top b(2)
+        dimen(100%, auto)
+        flexi(column)
+        box-sizing border-box
+        overflow hidden
+
+        &--wrap
+            flexi(row)
+            flex-wrap wrap
+
+    // BLOCK: Стили секций при стиле ванюай
+
+    &.oneui-style
+        margin $main_p 0
+        background-color: --v.secBg
+        border-radius: $main_p
+
+        .section__content
+            border-radius $main_p

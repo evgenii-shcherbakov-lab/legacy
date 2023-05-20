@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use 'styles/theme' as theme;
+
+@import 'styles/lib';
+@import 'styles/scroll';
+
+:root {
+  font-size: 3vh;
+
+  @media (max-aspect-ratio: 6/5) {
+    font-size: 3vw;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.dark-mode {
+  background-color: $main;
+  color: $primary;
+  @include mat.all-component-themes(theme.$dark-theme);
+}
+
+.light-mode {
+  background-color: $primary;
+  color: $main;
+  @include mat.all-component-themes(theme.$light-theme);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  transition: $tr;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.divider {
+  flex: 1 1 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.mat-icon {
+  cursor: pointer;
+
+  &:hover {
+    color: $accent;
+  }
+}

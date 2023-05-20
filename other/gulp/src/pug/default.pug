@@ -1,0 +1,34 @@
+block vars
+
+- const data = locals.json
+
+- const head = data.head[id]
+- const content = data.content[id]
+- const dialog = data.dialog[id]
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= head.pageTitle
+        link(rel="shortcut icon", href= head.shortcutPath, type="image/svg+xml")
+        each stylePath in head.stylePathes
+            link(rel="stylesheet", href=stylePath)
+    body
+        include modules/_header
+        include modules/_main
+
+        include modules/_dialog
+
+        #default-preloader.preloader
+            .preloader__animation
+        if (head.themePreloader)
+            #theme-preloader.preloader
+                .preloader__text= 'Применение...'
+            
+        include modules/_scroll-up
+
+        each scriptPath in head.scriptPathes 
+            script(src= scriptPath)

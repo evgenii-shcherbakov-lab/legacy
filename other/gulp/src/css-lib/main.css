@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+details summary {
+    display: block;  /* у summary по умолчанию свойство display в значении list-item, потому поддерживается свойство list-style */
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;  /* блок раскрывается при щелчке по кнопке, а не по всей строке */
+    outline-style: none;  /* удалить обводку при фокусе */
+    cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}

@@ -1,0 +1,18 @@
+header.header
+    .header__top
+        .header__top__left
+            if (time)
+                span.header__title.header__time
+                    span.hour= 'ч'
+                    span.hour= 'ч'
+                    span= ':'
+                    span.minutes= 'мм'
+            else 
+                span.header__title= headerTitle
+        .header__top__right
+        span.header__top__scroll-indicator
+    .header__bottom 
+        .nav
+            if (settingsIconInHeader)
+                include ../header-icons/settings-icon
+        include ../header-icons/nav-icon

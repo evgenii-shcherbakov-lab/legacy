@@ -1,0 +1,12 @@
+<mat-card class='todo' [class.strong]='todo.isStrong'>
+  <mat-checkbox
+    class='todo__checkbox'
+    color='accent'
+    (change)='completedHandler($event.checked)'
+    [checked]='todo.isCompleted'
+  ></mat-checkbox>
+  <span>{{ todo.text }}</span>
+  <span class='divider'></span>
+  <mat-icon (click)='strongHandler()'>star</mat-icon>
+  <mat-icon (click)='deleteHandler()'>delete</mat-icon>
+</mat-card>

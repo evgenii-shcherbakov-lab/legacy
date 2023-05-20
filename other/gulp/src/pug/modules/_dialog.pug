@@ -1,0 +1,20 @@
+include _mixins
+
+#dialog.dialog 
+    #dialog-container.dialog__container 
+        #dialog-btn.dialog__btn.btn
+        each dialogBlock in dialog
+            .dialog__block(id= dialogBlock.id)
+                each block in dialogBlock.blocks
+                    h3.dialog__block__header= block.title
+                    if (block.container)
+                        div(class= block.containerClass)
+                            +dialogBlockContent(block.items)
+                    else 
+                        +dialogBlockContent(block.items) 
+                else
+                    span= ''
+        else 
+            span= ''
+        if (id == 'settings')
+            include _about

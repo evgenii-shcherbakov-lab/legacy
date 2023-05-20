@@ -1,0 +1,29 @@
+<form class='form'>
+  <mat-form-field class="form__field" appearance="fill" color='accent'>
+    <mat-label>Todo text</mat-label>
+    <input
+      matInput
+      [(ngModel)]='inputText'
+      (keydown)='keyDownHandler($event.key)'
+      name='todoInput'
+      autocomplete='off'
+    >
+  </mat-form-field>
+  <div class='form__row'>
+    <mat-checkbox
+      color='accent'
+      [(ngModel)]='isStrong'
+      name='isStrong'
+    >
+      isStrong
+    </mat-checkbox>
+    <button
+      type='button'
+      (click)='buttonHandler()'
+      mat-raised-button
+      color='accent'
+    >
+      Save todo
+    </button>
+  </div>
+</form>
