@@ -1,0 +1,230 @@
+{
+  "transcript": [
+    {
+      "Index": 3,
+      "Text": "How's everyone doing?",
+      "Speaker": "spk_2",
+      "StartT": 13.04,
+      "EndT": 14.06,
+      "Length": 1,
+      "SentimentLabel": "NEUTRAL",
+      "Positive": 0.01,
+      "Negative": 0.04,
+      "Neutral": 0.96,
+      "Mixed": 0,
+      "Dates": null,
+      "Location": null,
+      "Person": null,
+      "Organization": null,
+      "Quantity": null,
+      "Type": "-"
+    },
+    {
+      "Index": 4,
+      "Text": "Uh Doing better as it was before but not very well actually you can hear my voice. Its not not pretty good yet. Also tatiana feeling much better but still have problems with scoff.",
+      "Speaker": "spk_0",
+      "StartT": 14.74,
+      "EndT": 31.36,
+      "Length": 16.6,
+      "SentimentLabel": "MIXED",
+      "Positive": 0.01,
+      "Negative": 0.17,
+      "Neutral": 0,
+      "Mixed": 0.82,
+      "Dates": null,
+      "Location": null,
+      "Person": "tatiana, scoff",
+      "Organization": null,
+      "Quantity": null,
+      "Type": "-"
+    },
+    {
+      "Index": 5,
+      "Text": "Uh and nikita have a coronavirus also so he dont work straight now.",
+      "Speaker": "spk_0",
+      "StartT": 31.74,
+      "EndT": 38.36,
+      "Length": 6.6,
+      "SentimentLabel": "NEGATIVE",
+      "Positive": 0.01,
+      "Negative": 0.59,
+      "Neutral": 0.39,
+      "Mixed": 0.02,
+      "Dates": null,
+      "Location": null,
+      "Person": "nikita",
+      "Organization": null,
+      "Quantity": null,
+      "Type": "-"
+    },
+    {
+      "Index": 6,
+      "Text": "So yeah, its like and you uh epidemic records in belarus right now uh with a microphone in monday. It was uh,",
+      "Speaker": "spk_0",
+      "StartT": 41.44,
+      "EndT": 53.56,
+      "Length": 12.1,
+      "SentimentLabel": "NEUTRAL",
+      "Positive": 0.1,
+      "Negative": 0.3,
+      "Neutral": 0.6,
+      "Mixed": 0,
+      "Dates": "monday, monday",
+      "Location": "belarus",
+      "Person": null,
+      "Organization": null,
+      "Quantity": null,
+      "Type": "-"
+    }
+  ],
+  "attendees": [
+    {
+      "attendee": "spk_0",
+      "Name": "Igor Karayev",
+      "email": "iss.karik@gmail.com",
+      "is_host": true,
+      "response_status": "accepted",
+      "company": "",
+      "title": "",
+      "status": "",
+      "monologue": {
+        "monologue_second": 146.90000000000003,
+        "monologue_start_time": 87.04
+      },
+      "talk_time": { "total_talk_time": 381, "percentage": 44.30747761367601 },
+      "avg_words_per_minute": 141,
+      "overall_sentiment": {
+        "Positive": 23.86,
+        "Negative": 21.154,
+        "Neutral": 54.986
+      },
+      "meeting_sentiment": null
+    },
+    {
+      "attendee": "spk_1",
+      "Name": "Tanya Lekunovich",
+      "email": "",
+      "is_host": null,
+      "response_status": "",
+      "company": "",
+      "title": "",
+      "status": "",
+      "monologue": {
+        "monologue_second": 45.699999999999996,
+        "monologue_start_time": 895.24
+      },
+      "talk_time": {
+        "total_talk_time": 47.199999999999996,
+        "percentage": 5.489010350040701
+      },
+      "avg_words_per_minute": 167,
+      "overall_sentiment": {
+        "Positive": 15.598,
+        "Negative": 23.05,
+        "Neutral": 61.352
+      },
+      "meeting_sentiment": null
+    },
+    {
+      "attendee": "spk_2",
+      "Name": "Andrew Hickey",
+      "email": "andrew@patternai.co",
+      "is_host": false,
+      "response_status": "accepted",
+      "company": "",
+      "title": "",
+      "status": "",
+      "monologue": { "monologue_second": 16.9, "monologue_start_time": 946.84 },
+      "talk_time": {
+        "total_talk_time": 65.89999999999999,
+        "percentage": 7.663681823467844
+      },
+      "avg_words_per_minute": 172,
+      "overall_sentiment": {
+        "Positive": 24.187,
+        "Negative": 15.936,
+        "Neutral": 59.877
+      },
+      "meeting_sentiment": null
+    },
+    {
+      "attendee": "spk_3",
+      "Name": "radzhab Shakirov",
+      "email": "",
+      "is_host": null,
+      "response_status": "",
+      "company": "",
+      "title": "",
+      "status": "",
+      "monologue": { "monologue_second": 44, "monologue_start_time": 245.34 },
+      "talk_time": { "total_talk_time": 78.8, "percentage": 9.163856262356086 },
+      "avg_words_per_minute": 135,
+      "overall_sentiment": {
+        "Positive": 17.604,
+        "Negative": 39.201,
+        "Neutral": 43.194
+      },
+      "meeting_sentiment": null
+    },
+    {
+      "attendee": "spk_4",
+      "Name": "Andrey Rodionov",
+      "email": "",
+      "is_host": null,
+      "response_status": "",
+      "company": "",
+      "title": "",
+      "status": "",
+      "monologue": {
+        "monologue_second": 94.40000000000002,
+        "monologue_start_time": 391.84
+      },
+      "talk_time": { "total_talk_time": 173, "percentage": 20.118618444005115 },
+      "avg_words_per_minute": 125,
+      "overall_sentiment": {
+        "Positive": 19.046,
+        "Negative": 9.354,
+        "Neutral": 71.601
+      },
+      "meeting_sentiment": null
+    },
+    {
+      "attendee": "spk_5",
+      "Name": "Michail Zyusko",
+      "email": "",
+      "is_host": null,
+      "response_status": "",
+      "company": "",
+      "title": "",
+      "status": "",
+      "monologue": { "monologue_second": 53.7, "monologue_start_time": 695.44 },
+      "talk_time": { "total_talk_time": 55.2, "percentage": 6.419351087335737 },
+      "avg_words_per_minute": 128,
+      "overall_sentiment": {
+        "Positive": 21.341,
+        "Negative": 35.841,
+        "Neutral": 42.818
+      },
+      "meeting_sentiment": null
+    },
+    {
+      "attendee": "spk_6",
+      "Name": "Irina",
+      "email": "irina.potrebko7@gmail.com",
+      "is_host": false,
+      "response_status": "needsAction",
+      "company": "",
+      "title": "",
+      "status": "",
+      "monologue": { "monologue_second": 58.8, "monologue_start_time": 809.14 },
+      "talk_time": { "total_talk_time": 58.8, "percentage": 6.838004419118501 },
+      "avg_words_per_minute": 119,
+      "overall_sentiment": {
+        "Positive": 11.582,
+        "Negative": 27.664,
+        "Neutral": 60.754
+      },
+      "meeting_sentiment": null
+    }
+  ]
+}

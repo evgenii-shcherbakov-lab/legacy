@@ -1,0 +1,30 @@
+{
+  "name": "express-lambda",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "ts-node src/local.ts",
+    "build": "tsc",
+    "package": "npm run build && serverless package",
+    "deploy": "npm run build && serverless deploy"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1080.0",
+    "aws-serverless-express": "^3.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-fileupload": "^1.3.1"
+  },
+  "devDependencies": {
+    "@types/aws-serverless-express": "^3.3.5",
+    "@types/express": "^4.17.13",
+    "@types/express-fileupload": "^1.2.2",
+    "aws-lambda": "^1.0.7",
+    "nodemon": "^2.0.15",
+    "prettier": "2.5.1",
+    "serverless": "^3.3.0",
+    "serverless-plugin-typescript": "^2.1.1",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
+}

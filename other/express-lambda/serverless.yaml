@@ -1,0 +1,39 @@
+service: express-lambda
+
+custom:
+  bucket: iipekolict-express-lambda
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-1
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - s3:GetObject
+            - s3:GetObjectAcl
+            - s3:PutObject
+            - s3:PutObjectAcl
+          Resource: "arn:aws:s3:::${self:custom.bucket}/*"
+
+plugins:
+  - serverless-plugin-typescript
+
+package:
+  exclude:
+    - "**/*.ts"
+    - "**/*.env"
+
+functions:
+  http:
+    handler: src/lambda.default
+    timeout: 2
+    name: express-lambda
+    environment:
+      BUCKET_NAME: ${self:custom.bucket}
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
